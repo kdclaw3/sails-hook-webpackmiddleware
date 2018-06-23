@@ -1,0 +1,26 @@
+{
+	"name": "sails-hook-webpackmiddleware",
+	"version": "0.0.1",
+	"description": "A sails hook to use webpack, webpack dev middleware, and webpack hot middleware.",
+	"main": "index.js",
+	"scripts": {
+		"test": "mocha test"
+	},
+	"keywords": [
+		"sails",
+		"webpack"
+	],
+	"author": "Dee Clawson",
+	"license": "MIT",
+	"dependencies": {
+		"webpack": "^4.12.x"
+	},
+	"devDependencies": {
+		"webpack-dev-middleware": "^3.1.x",
+		"webpack-hot-middleware": "^2.22.x"
+	},
+	"sails": {
+		"isHook": true,
+		"hookName": "webpackmiddleware"
+	}
+}
