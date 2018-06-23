@@ -8,7 +8,11 @@
 	},
 	"keywords": [
 		"sails",
-		"webpack"
+		"webpack",
+		"react",
+		"webpack dev middleare",
+		"react hot",
+		"webpack hot middleware"
 	],
 	"repository": {
 		"type": "git",
