@@ -1,4 +1,4 @@
-## ![Sails Webpack Hook](https://i.imgur.com/Gm7iImo.png) &nbsp; [![npm version](https://badge.fury.io/js/sails-hook-webpackmiddleware.svg)](https://badge.fury.io/js/sails-hook-webpackmiddleware) &nbsp; [![license][license-badge]][LICENSE]
+## ![Sails Webpack Hook](https://i.imgur.com/Gm7iImo.png) &nbsp; [![npm version](https://badge.fury.io/js/sails-hook-webpackmiddleware.svg)](https://badge.fury.io/js/sails-hook-webpackmiddleware) &nbsp; [![license](https://img.shields.io/badge/license-MIT-brightgreen.svg)](./LICENSE)
 
 
 ### Run
@@ -23,19 +23,19 @@ MIT License, Copyright (c) 2018 Dee Clawson
 <!-- language: lang-none -->
 ┌────────────────────────────────────────────────────────────────────────┐
 │                                                                        │
-│                             Licenses (50)                              │
+│                             Licenses (381)                             │
 │                                                                        │
 ├──────────────────────────────────────────┬──────────────┬──────────────┤
 │ License                                  │ Number       │ %            │
 ├──────────────────────────────────────────┼──────────────┼──────────────┤
-│ MIT                                      │ 46           │ 92           │
-│ ISC                                      │ 3            │ 6            │
-│ BSD 3 Clause                             │ 1            │ 2            │
+│ MIT                                      │ 298          │ 78           │
+│ ISC                                      │ 54           │ 14           │
+│ BSD 3 Clause                             │ 12           │ 3            │
+│ Apache 2.0                               │ 7            │ 1            │
+│ BSD 2 Clause                             │ 7            │ 1            │
+│ Apache                                   │ 1            │ 0            │
+│ CC0                                      │ 1            │ 0            │
+│ Zlib                                     │ 1            │ 0            │
 └──────────────────────────────────────────┴──────────────┴──────────────┘
 </pre>
 
-
-[CHANGELOG]: ./package.json
-[LICENSE]: ./LICENSE
-[version-badge]: https://img.shields.io/badge/version-0.0.3-blue.svg
-[license-badge]: https://img.shields.io/badge/license-MIT-blue.svg
