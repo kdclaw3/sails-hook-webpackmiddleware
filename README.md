@@ -1,10 +1,14 @@
 ## ![Sails Webpack Hook](https://i.imgur.com/Gm7iImo.png) &nbsp; [![npm version](https://badge.fury.io/js/sails-hook-webpackmiddleware.svg)](https://badge.fury.io/js/sails-hook-webpackmiddleware) &nbsp; [![license](https://img.shields.io/badge/license-MIT-brightgreen.svg)](./LICENSE)
 
 
+### About
+
+This project was created to use the webpack dev middleware and webpack hot middleware with sails. For useage including basic webpack configuration see this example project [earth_rocker_project_boilerplate] (https://github.com/kdclaw3/earth_rocker_project_boilerplate)
+
 ### Run
 
 ```sh
-$ npm install sails-hook-webpackmiddleware
+$ npm install sails-hook-webpackmiddleware --save
 ```
 
 ### Stack
