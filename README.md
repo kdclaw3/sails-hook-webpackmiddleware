@@ -23,5 +23,23 @@ $ npm install sails-hook-webpackmiddleware --save
 MIT License, Copyright (c) 2018 Dee Clawson
 
 ### Dependencies
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fkdclaw3%2Fsails-hook-webpackmiddleware.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fkdclaw3%2Fsails-hook-webpackmiddleware?ref=badge_shield)
+<pre>
+<!-- language: lang-none -->
+┌────────────────────────────────────────────────────────────────────────┐
+│                                                                        │
+│                             Licenses (381)                             │
+│                                                                        │
+├──────────────────────────────────────────┬──────────────┬──────────────┤
+│ License                                  │ Number       │ %            │
+├──────────────────────────────────────────┼──────────────┼──────────────┤
+│ MIT                                      │ 298          │ 78           │
+│ ISC                                      │ 54           │ 14           │
+│ BSD 3 Clause                             │ 12           │ 3            │
+│ Apache 2.0                               │ 7            │ 1            │
+│ BSD 2 Clause                             │ 7            │ 1            │
+│ Apache                                   │ 1            │ 0            │
+│ CC0                                      │ 1            │ 0            │
+│ Zlib                                     │ 1            │ 0            │
+└──────────────────────────────────────────┴──────────────┴──────────────┘
+</pre>
 
