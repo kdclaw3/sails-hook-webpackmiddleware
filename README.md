@@ -1,4 +1,5 @@
 ## ![Sails Webpack Hook](https://i.imgur.com/Gm7iImo.png) &nbsp; [![npm version](https://badge.fury.io/js/sails-hook-webpackmiddleware.svg)](https://badge.fury.io/js/sails-hook-webpackmiddleware) &nbsp; [![license](https://img.shields.io/badge/license-MIT-brightgreen.svg)](./LICENSE)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fkdclaw3%2Fsails-hook-webpackmiddleware.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fkdclaw3%2Fsails-hook-webpackmiddleware?ref=badge_shield)
 
 
 ### About
@@ -22,6 +23,9 @@ $ npm install sails-hook-webpackmiddleware --save
 
 MIT License, Copyright (c) 2018 Dee Clawson
 
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fkdclaw3%2Fsails-hook-webpackmiddleware.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fkdclaw3%2Fsails-hook-webpackmiddleware?ref=badge_large)
+
 ### Dependencies
 <pre>
 <!-- language: lang-none -->
@@ -42,4 +46,3 @@ MIT License, Copyright (c) 2018 Dee Clawson
 │ Zlib                                     │ 1            │ 0            │
 └──────────────────────────────────────────┴──────────────┴──────────────┘
 </pre>
-
