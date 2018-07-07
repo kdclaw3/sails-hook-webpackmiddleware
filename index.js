@@ -2,6 +2,8 @@
  * Module dependencies
  */
 const webpack = require('webpack');
+const log = require('captains-log')();
+
 
 /**
  * Webpack hook
@@ -27,13 +29,13 @@ module.exports = function defineWebpackHook(sails) {
 		
 				if (!sails.config['webpack' + process.env.NODE_ENV] && !sails.config.webpack) {
 					throw new Error(
-						'\n\n[sails-hook-webpack] -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-\n' +
-						'[sails-hook-webpack] No individual environment webpack, nor default webpack configuration found!\n' +
-						'[sails-hook-webpack] -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-\n');
+						'\n\n[sails-hook-webpackmiddleware] -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-\n' +
+						'[sails-hook-webpackmiddleware] No individual environment webpack, nor default webpack configuration found!\n' +
+						'[sails-hook-webpackmiddleware] -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-\n');
 				} else if (!sails.config['webpack' + process.env.NODE_ENV] && sails.config.webpack) {
-					sails.log.debug('[sails-hook-webpack] No individual environment webpack config found, using default.');
+					log.debug('[sails-hook-webpackmiddleware] No individual environment webpack config found, using default.');
 				} else {
-					sails.log.debug('[sails-hook-webpack] Using webpack' + process.env.NODE_ENV + ' configuration.');
+					log.debug('[sails-hook-webpackmiddleware] Using webpack' + process.env.NODE_ENV + ' configuration.');
 				}
 			
 			}
@@ -49,7 +51,7 @@ module.exports = function defineWebpackHook(sails) {
 		 */
 		initialize: function (done) {
 
-			sails.log.info('[sails-hook-webpack] -> initializing.');
+			log.info('[sails-hook-webpackmiddleware] -> initializing.');
 
 			sails.after('hook:http:loaded', function () {
 
@@ -66,14 +68,14 @@ module.exports = function defineWebpackHook(sails) {
 					const compiler = webpack(configFile);
 					const expressApp = sails.hooks.http.app;
 
-					sails.log.info('[sails-hook-webpack] -> webpack: webpack-dev-middleware.');
+					log.info('[sails-hook-webpackmiddleware] -> webpack: webpack-dev-middleware.');
 					expressApp.use(require('webpack-dev-middleware')(compiler, {
 						stats: {
 							colors: true
 						},
 					}));
 
-					sails.log.info('[sails-hook-webpack] -> webpack: webpack-hot-middleware.');
+					log.info('[sails-hook-webpackmiddleware] -> webpack: webpack-hot-middleware.');
 					expressApp.use(require("webpack-hot-middleware")(compiler, {
 						noInfo: true,
 						//quiet: true,
@@ -87,13 +89,13 @@ module.exports = function defineWebpackHook(sails) {
 					//webpack cli and forever to lauch production builds of the sails app
 					//otherwise forever rebuilds the webpack project
 					/*
-					sails.log.info('[sails-hook-webpack] -> webpack: compiler init.');
+					log.info('[sails-hook-webpackmiddleware] -> webpack: compiler init.');
 					webpack(configFile, function (err, stats) {
 
 						if (err) throw err;
 
-						sails.log.info('[sails-hook-webpack] -> webpack: compiler loaded.');
-						sails.log.debug(stats.toString({
+						log.info('[sails-hook-webpackmiddleware] -> webpack: compiler loaded.');
+						log.debug(stats.toString({
 							colors: true,
 							chunks: false
 						}));

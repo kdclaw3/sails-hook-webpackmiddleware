@@ -3,12 +3,12 @@
 
 ### About
 
-This project was created to use the webpack dev middleware and webpack hot middleware with sails. For useage including basic webpack configuration see this example project [earth_rocker_project_boilerplate] (https://github.com/kdclaw3/earth_rocker_project_boilerplate)
+This project was created to use the webpack dev middleware and webpack hot middleware with sails v1.0+. For useage including basic webpack configuration see this example project [earth_rocker_project_boilerplate] (https://github.com/kdclaw3/earth_rocker_project_boilerplate)
 
 ### Run
 
 ```sh
-$ npm install sails-hook-webpackmiddleware --save
+$ npm install sails-hook-webpackmiddleware --save-dev
 ```
 
 ### Stack
@@ -27,17 +27,18 @@ MIT License, Copyright (c) 2018 Dee Clawson
 <!-- language: lang-none -->
 ┌────────────────────────────────────────────────────────────────────────┐
 │                                                                        │
-│                             Licenses (379)                             │
+│                             Licenses (391)                             │
 │                                                                        │
 ├──────────────────────────────────────────┬──────────────┬──────────────┤
 │ License                                  │ Number       │ %            │
 ├──────────────────────────────────────────┼──────────────┼──────────────┤
-│ MIT                                      │ 296          │ 78           │
-│ ISC                                      │ 54           │ 14           │
+│ MIT                                      │ 305          │ 78           │
+│ ISC                                      │ 55           │ 14           │
 │ BSD 3 Clause                             │ 12           │ 3            │
-│ Apache 2.0                               │ 7            │ 1            │
+│ Apache 2.0                               │ 8            │ 2            │
 │ BSD 2 Clause                             │ 7            │ 1            │
 │ Apache                                   │ 1            │ 0            │
+│ BSD                                      │ 1            │ 0            │
 │ CC0                                      │ 1            │ 0            │
 │ Zlib                                     │ 1            │ 0            │
 └──────────────────────────────────────────┴──────────────┴──────────────┘
