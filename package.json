@@ -3,9 +3,6 @@
 	"version": "0.1.2",
 	"description": "A sails hook to use webpack dev middleware, and webpack hot middleware.",
 	"main": "index.js",
-	"scripts": {
-		"test": "mocha test"
-	},
 	"keywords": [
 		"sails",
 		"webpack",
