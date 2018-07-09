@@ -29,5 +29,8 @@
 	"sails": {
 		"isHook": true,
 		"hookName": "webpackmiddleware"
+	},
+	"optionalDependencies": {
+		"eslint": "^5.1.x"
 	}
 }
