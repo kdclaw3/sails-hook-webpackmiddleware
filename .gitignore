@@ -62,5 +62,3 @@ typings/
 
 # eh
 package-lock.json
-
-.eslintrc
