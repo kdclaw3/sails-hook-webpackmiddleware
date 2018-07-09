@@ -72,7 +72,7 @@ module.exports = function defineWebpackHook(sails) {
 					expressApp.use(require('webpack-dev-middleware')(compiler, {
 						stats: {
 							colors: true
-						},
+						}
 					}));
 
 					log.info('[sails-hook-webpackmiddleware] -> webpack: webpack-hot-middleware.');
