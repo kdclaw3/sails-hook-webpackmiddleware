@@ -1,6 +1,5 @@
 module.exports = {
 
-	'parser': 'babel-eslint',
 	'env': {
 		es6: true,
 		node: true,
@@ -15,12 +14,8 @@ module.exports = {
 			jsx: true
 		}
 	},
-	'plugins': [
-		'react'
-	],
 	'extends': [
 		'eslint:recommended',
-		'plugin:react/recommended'
 	],
 	'rules': {
 		//enable eslint rules

@@ -26,7 +26,7 @@ module.exports = function defineWebpackHook(sails) {
 			let defaults = {};
 
 			if (process.env.NODE_ENV !== 'production') {
-		
+
 				if (!sails.config['webpack' + process.env.NODE_ENV] && !sails.config.webpack) {
 					throw new Error(
 						'\n\n[sails-hook-webpackmiddleware] -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-\n' +
@@ -37,7 +37,7 @@ module.exports = function defineWebpackHook(sails) {
 				} else {
 					log.debug('[sails-hook-webpackmiddleware] Using webpack' + process.env.NODE_ENV + ' configuration.');
 				}
-			
+
 			}
 
 			return defaults;
@@ -76,7 +76,7 @@ module.exports = function defineWebpackHook(sails) {
 					}));
 
 					log.info('[sails-hook-webpackmiddleware] -> webpack: webpack-hot-middleware.');
-					expressApp.use(require('webpack-hot-middleware')(compiler, { 
+					expressApp.use(require('webpack-hot-middleware')(compiler, {
 						noInfo: true,
 						//quiet: true,
 						reload: true
@@ -85,7 +85,7 @@ module.exports = function defineWebpackHook(sails) {
 				} else {
 
 					//do nothing...
-					//for the publishing of version 0.1.0 my recommendation is to use 
+					//for the publishing of version 0.1.0 my recommendation is to use
 					//webpack cli and forever to lauch production builds of the sails app
 					//otherwise forever rebuilds the webpack project
 					/*
