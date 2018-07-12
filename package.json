@@ -1,6 +1,6 @@
 {
 	"name": "sails-hook-webpackmiddleware",
-	"version": "0.1.3",
+	"version": "1.0.0",
 	"description": "A sails hook to use webpack dev middleware, and webpack hot middleware.",
 	"main": "index.js",
 	"keywords": [
@@ -24,7 +24,7 @@
 		"webpack-hot-middleware": "^2.22.x"
 	},
 	"scripts": {
-		"lint": "eslint . --ext=js,jsx --fix;  exit 0"
+		"lint": "eslint . --ext=js --fix;  exit 0"
 	},
 	"peerDependencies": {
 		"sails": "^1.x.x"

@@ -25,7 +25,11 @@ module.exports = function defineWebpackHook(sails) {
 
 			let defaults = {};
 
-			if (process.env.NODE_ENV !== 'production') {
+			if (typeof sails.config.custom.webpackmiddleware === 'boolean' && sails.config.custom.webpackmiddleware === false ) {
+
+				log.debug(`[sails-hook-webpackmiddleware] -> DISABLED -> sails.config.custom.webpackmiddleware === false`);
+
+			} else if (process.env.NODE_ENV !== 'production') {
 
 				if (!sails.config['webpack' + process.env.NODE_ENV] && !sails.config.webpack) {
 					throw new Error(
@@ -51,11 +55,15 @@ module.exports = function defineWebpackHook(sails) {
 		 */
 		initialize: function (done) {
 
-			log.info('[sails-hook-webpackmiddleware] -> initializing.');
+			log.verbose('[sails-hook-webpackmiddleware] -> initializing.');
 
-			sails.after('hook:http:loaded', function () {
+			if (typeof sails.config.custom.webpackmiddleware === 'boolean' && sails.config.custom.webpackmiddleware === false ) {
 
-				if (process.env.NODE_ENV !== 'production') {
+				log.debug(`[sails-hook-webpackmiddleware] -> DISABLED -> sails.config.custom.webpackmiddleware === false`);
+
+			} else if (process.env.NODE_ENV !== 'production') {
+
+				sails.after('hook:http:loaded', function () {
 
 					//choose the config file to use
 					let configFile;
@@ -82,31 +90,9 @@ module.exports = function defineWebpackHook(sails) {
 						reload: true
 					}));
 
-				} else {
+				});
 
-					//do nothing...
-					//for the publishing of version 0.1.0 my recommendation is to use
-					//webpack cli and forever to lauch production builds of the sails app
-					//otherwise forever rebuilds the webpack project
-					/*
-					log.info('[sails-hook-webpackmiddleware] -> webpack: compiler init.');
-					webpack(configFile, function (err, stats) {
-
-						if (err) throw err;
-
-						log.info('[sails-hook-webpackmiddleware] -> webpack: compiler loaded.');
-						log.debug(stats.toString({
-							colors: true,
-							chunks: false
-						}));
-
-					});
-					*/
-
-				}
-
-			});
-
+			}
 			// Continue lifting Sails.
 			return done();
 
