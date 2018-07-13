@@ -2,7 +2,7 @@
  * Module dependencies
  */
 const webpack = require('webpack');
-const log = require('captains-log')();
+
 
 
 /**
@@ -11,6 +11,10 @@ const log = require('captains-log')();
  * @description :: A hook to compile assets using Webhook.
  */
 module.exports = function defineWebpackHook(sails) {
+
+	function log(s) {
+		sails.log.debug(`[sails-hook-webpackmiddleware] -> ${s}.`);
+	}
 
 	return {
 
@@ -25,9 +29,9 @@ module.exports = function defineWebpackHook(sails) {
 
 			let defaults = {};
 
-			if (typeof sails.config.custom.webpackmiddleware === 'boolean' && sails.config.custom.webpackmiddleware === false ) {
+			if (!(sails && sails.config && sails.config.webpackmiddleware && sails.config.webpackmiddleware.enabled)) {
 
-				log.debug(`[sails-hook-webpackmiddleware] -> DISABLED -> sails.config.custom.webpackmiddleware === false`);
+				log(`DISABLED -> sails.config..webpackmiddleware !== true`);
 
 			} else if (process.env.NODE_ENV !== 'production') {
 
@@ -37,9 +41,9 @@ module.exports = function defineWebpackHook(sails) {
 						'[sails-hook-webpackmiddleware] No individual environment webpack, nor default webpack configuration found!\n' +
 						'[sails-hook-webpackmiddleware] -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-\n');
 				} else if (!sails.config['webpack' + process.env.NODE_ENV] && sails.config.webpack) {
-					log.debug('[sails-hook-webpackmiddleware] No individual environment webpack config found, using default.');
+					log('No individual environment webpack config found, using default');
 				} else {
-					log.debug('[sails-hook-webpackmiddleware] Using webpack' + process.env.NODE_ENV + ' configuration.');
+					log('Using webpack' + process.env.NODE_ENV + ' configuration');
 				}
 
 			}
@@ -55,13 +59,15 @@ module.exports = function defineWebpackHook(sails) {
 		 */
 		initialize: function (done) {
 
-			log.verbose('[sails-hook-webpackmiddleware] -> initializing.');
 
-			if (typeof sails.config.custom.webpackmiddleware === 'boolean' && sails.config.custom.webpackmiddleware === false ) {
 
-				log.debug(`[sails-hook-webpackmiddleware] -> DISABLED -> sails.config.custom.webpackmiddleware === false`);
+			if (!(sails && sails.config && sails.config.webpackmiddleware && sails.config.webpackmiddleware.enabled)) {
+
+				return done();
 
 			} else if (process.env.NODE_ENV !== 'production') {
+
+				log('initializing');
 
 				sails.after('hook:http:loaded', function () {
 
@@ -76,14 +82,14 @@ module.exports = function defineWebpackHook(sails) {
 					const compiler = webpack(configFile);
 					const expressApp = sails.hooks.http.app;
 
-					log.info('[sails-hook-webpackmiddleware] -> webpack: webpack-dev-middleware.');
+					log('webpack: webpack-dev-middleware');
 					expressApp.use(require('webpack-dev-middleware')(compiler, {
 						stats: {
 							colors: true
 						}
 					}));
 
-					log.info('[sails-hook-webpackmiddleware] -> webpack: webpack-hot-middleware.');
+					log('webpack: webpack-hot-middleware');
 					expressApp.use(require('webpack-hot-middleware')(compiler, {
 						noInfo: true,
 						//quiet: true,
