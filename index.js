@@ -59,8 +59,6 @@ module.exports = function defineWebpackHook(sails) {
 		 */
 		initialize: function (done) {
 
-
-
 			if (!(sails && sails.config && sails.config.webpackmiddleware && sails.config.webpackmiddleware.enabled)) {
 
 				return done();

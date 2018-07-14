@@ -3,7 +3,7 @@
 
 ### About
 
-This project was created to use the webpack dev middleware and webpack hot middleware with sails v1.0+. For useage including basic webpack configuration see this example project [earth_rocker_project_boilerplate] (https://github.com/kdclaw3/earth_rocker_project_boilerplate)
+This project was created to use the webpack dev middleware and webpack hot middleware with sails v1.0+. For usage including basic webpack configuration see this example project [earth_rocker_project_boilerplate] (https://github.com/kdclaw3/earth_rocker_project_boilerplate)
 
 ### Run
 
