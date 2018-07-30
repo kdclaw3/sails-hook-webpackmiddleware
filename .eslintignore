@@ -1,0 +1,2 @@
+# enable linting of the eslint file
+!.eslintrc.js
